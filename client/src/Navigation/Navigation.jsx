@@ -4,11 +4,13 @@ import Link from '../shared/Link/Link'
 
 
 function Navigation() {
-    return <nav className="">
+    return <nav className="navigation">
         <ul>
-            <Link to="/">True Believers</Link>
-            <Link to="/login">Log in</Link>
-            <Link to="/register">Register</Link>
+            <Link to="/" ><img src="logo.png" alt="True Believers Logo" className="logo" /></Link>
+            <nav className="navbar">
+                <Link to="/login">Log in</Link>
+                <Link to="/register">Register</Link>
+            </nav>
         </ul>
     </nav>;
 };

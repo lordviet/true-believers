@@ -1,0 +1,13 @@
+.link{
+    margin: 0em 2em;
+}
+
+.link > a{
+    color: #fff;
+    text-decoration: none;
+}
+
+.link > a:hover{
+    color: #F11E22;
+    transition: all .2s ease-in-out;
+}
