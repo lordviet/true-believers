@@ -1,0 +1,12 @@
+.home {
+    background-image: url("homeBackground.png");
+    background-repeat: no-repeat;
+    padding-bottom: 15em;
+}
+
+.home>h1 {
+    text-align: center;
+    font-size: 3em;
+    margin: 1em;
+    margin-bottom: 0.5em;
+}

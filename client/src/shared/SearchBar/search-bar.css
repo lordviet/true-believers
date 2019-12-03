@@ -1,0 +1,29 @@
+.search-bar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.search-bar>input {
+    font-size: 1em;
+    padding: 0.6em;
+    width: 50em;
+}
+
+.search-bar>button {
+    background-color: #F11E22;
+    width: 125px;
+    border: none;
+    color: #fff;
+    padding: 1em 0.7em;
+    text-align: center;
+    text-decoration: none;
+    font-size: 1em;
+    /* margin: 2em 0; */
+    margin-top: 2.5em;
+}
+/* 
+.search-bar>button:hover {
+    background-color: #F11E22;
+    color: #fff
+} */

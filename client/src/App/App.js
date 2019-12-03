@@ -1,6 +1,7 @@
 import React from 'react';
 import './App.css';
 import Navigation from '../Navigation/Navigation';
+import Home from '../Home/Home'
 // import {
 //   BrowserRouter as Router,
 //   Switch,
@@ -14,7 +15,7 @@ function App() {
     <Router>
       <div className="App">
         <Navigation />
-        <h1>Hi there</h1>
+        <Home />
       </div>
     </Router>
   );
