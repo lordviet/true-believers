@@ -22,6 +22,15 @@
     /* margin: 2em 0; */
     margin-top: 2.5em;
 }
+
+.queryResult{
+    width: 600px;
+    margin: 0 auto;
+}
+
+.characterImg{
+    width: 400px;
+}
 /* 
 .search-bar>button:hover {
     background-color: #F11E22;
