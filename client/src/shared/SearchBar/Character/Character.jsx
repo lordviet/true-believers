@@ -1,8 +1,9 @@
-import React from 'react'
-import './character.css'
-
-function Character({...characterInfo}) {
+import React from 'react';
+import './character.css';
+import Comics from '../Comics/Comics';
+function Character({ ...characterInfo }) {
     const characterImg = characterInfo.thumbnail.path + '.' + characterInfo.thumbnail.extension;
+    // let comics = characterInfo.comics.items;
     return <div className="queryResult">
         <img className="characterImg" src={characterImg} alt="" />
         <div className="characterInfo">
@@ -15,6 +16,7 @@ function Character({...characterInfo}) {
                 <p>Stories: {characterInfo.stories.available}</p>
             </div>
         </div>
+        <Comics characterId={characterInfo.id} />
     </div>;
 }
 

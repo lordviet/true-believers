@@ -45,7 +45,9 @@ class SearchBar extends React.Component {
 
         if (Object.keys(result).length) {
             const characterInfo = result.data[0];
-            return <Character {...characterInfo}/>
+            // console.log(characterInfo);
+            // console.log(characterInfo.comics.items);
+            return <Character {...characterInfo} />
         }
     }
 
