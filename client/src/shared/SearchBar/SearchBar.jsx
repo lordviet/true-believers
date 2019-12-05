@@ -46,11 +46,18 @@ class SearchBar extends React.Component {
             const characterInfo = result.data[0];
             const characterImg = characterInfo.thumbnail.path + '.' + characterInfo.thumbnail.extension;
             console.log(characterInfo);
-            console.log(characterInfo.thumbnail)
             return (<div className="queryResult">
-                <h3>{characterInfo.name}</h3>
-                <img class="characterImg" src={characterImg} alt="" />
-                <p>{characterInfo.description}</p>
+                <img className="characterImg" src={characterImg} alt="" />
+                <div className="characterInfo">
+                    <h2>{characterInfo.name}</h2>
+                    <p>{characterInfo.description}</p>
+                    <div className="characterAppearances">
+                        <p>Comics: {characterInfo.comics.available}</p>
+                        <p>Events: {characterInfo.events.available}</p>
+                        <p>Series: {characterInfo.series.available}</p>
+                        <p>Stories: {characterInfo.stories.available}</p>
+                    </div>
+                </div>
             </div>);
         }
     }
