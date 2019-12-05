@@ -1,6 +1,7 @@
 import React from 'react';
 import './search-bar.css';
 import marvelAPI from '../../services/marvel-api';
+import Character from './Character/Character'
 
 class SearchBar extends React.Component {
     constructor(props) {
@@ -44,21 +45,7 @@ class SearchBar extends React.Component {
 
         if (Object.keys(result).length) {
             const characterInfo = result.data[0];
-            const characterImg = characterInfo.thumbnail.path + '.' + characterInfo.thumbnail.extension;
-            console.log(characterInfo);
-            return (<div className="queryResult">
-                <img className="characterImg" src={characterImg} alt="" />
-                <div className="characterInfo">
-                    <h2>{characterInfo.name}</h2>
-                    <p>{characterInfo.description}</p>
-                    <div className="characterAppearances">
-                        <p>Comics: {characterInfo.comics.available}</p>
-                        <p>Events: {characterInfo.events.available}</p>
-                        <p>Series: {characterInfo.series.available}</p>
-                        <p>Stories: {characterInfo.stories.available}</p>
-                    </div>
-                </div>
-            </div>);
+            return <Character {...characterInfo}/>
         }
     }
 

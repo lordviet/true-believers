@@ -1,0 +1,36 @@
+.queryResult {
+    width: 1200px;
+    margin: 2em auto;
+    display: flex;
+}
+
+.characterImg {
+    width: 300px;
+    margin: 1em;
+    border: 4.5px solid #000;
+    border-radius: 10px;
+}
+
+.characterInfo {
+    margin: 1em;
+    padding: 1em;
+    width: 900px;
+    border: 4.5px solid #000;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.characterInfo>h2 {
+    /* add font */
+}
+
+.characterAppearances {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.characterAppearances>p {
+    margin-right: 2em;
+}
