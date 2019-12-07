@@ -10,7 +10,8 @@ class SearchBar extends React.Component {
             query: '',
             result: {},
             message: '',
-            loading: false
+            loading: false,
+            characterInfo: null
         }
     }
 
@@ -37,26 +38,29 @@ class SearchBar extends React.Component {
                         .fail(console.err)
                         .done();
                 });
+            // this.renderSearchResult();
         }
     }
 
     renderSearchResult = () => {
         const { result } = this.state; // check for message?
-
-        if (Object.keys(result).length) {
+        if (Object.keys(result).length && result.data.length) {
             const characterInfo = result.data[0];
             // console.log(characterInfo);
             // console.log(characterInfo.comics.items);
             return <Character {...characterInfo} />
+            // this.setState({ characterInfo })
         }
     }
 
     render() {
+        // const characterInfo = this.characterInfo;
         return <div>
             <form action="" className="search-bar">
                 <input type="text" placeholder="(ex. Hulk, Spider-man, Iron man)" onChange={this.changeHandler} />
                 <button type="button" onClick={this.submitSearch}>Search</button>
             </form>
+            {/* {characterInfo ? () => <Character {...characterInfo} /> : <p>Hey</p>} */}
             {this.renderSearchResult()}
         </div>
     };

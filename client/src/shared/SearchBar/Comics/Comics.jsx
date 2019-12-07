@@ -21,8 +21,22 @@ class ComicsList extends React.Component {
                 .fail(err => this.setState({ message: err }))
                 .done();
         });
+
     }
 
+
+    componentDidUpdate(prevProps) {
+        if (this.props.characterId !== prevProps.characterId) {
+            this.setState({ message: '', loading: true, comics: null }, () => {
+                marvelAPI.characters
+                    .comics(this.props.characterId, 10, 10)
+                    .then(list => this.setState({ comics: list.data }))
+                    .fail(err => this.setState({ message: err }))
+                    .done();
+            });
+        }
+    }
+    
     render() {
         const { comics } = this.state;
         return (
