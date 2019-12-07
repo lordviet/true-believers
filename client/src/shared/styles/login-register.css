@@ -1,0 +1,63 @@
+.login, .register {
+    width: 900px;
+    margin: 0 auto;
+    margin-top: 2em;
+    text-align: center;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.login>img {
+    width: 500px;
+}
+
+.register>img {
+    width: 350px;
+}
+
+.loginForm, .registerForm {
+    display: flex;
+    flex-direction: column;
+}
+
+.loginForm>h2, .registerForm>h2 {
+    margin: 2em auto;
+}
+
+.form-input>input {
+    padding: 0.7em;
+    margin: 1.5em;
+    border: 2px solid #b4b1b1;
+    border-radius: 20px;
+    outline: none;
+    transition: all .2s ease-in-out;
+}
+
+.form-input>input:focus {
+    border: 2px solid #F11E22;
+}
+
+.form-input>button {
+    background-color: #F11E22;
+    width: 125px;
+    border: none;
+    border-radius: 25px;
+    color: #fff;
+    padding: 0.6em 0.7em;
+    text-align: center;
+    text-decoration: none;
+    font-size: 1em;
+    margin-top: 2.5em;
+}
+
+.form-input>button:hover {
+    cursor: pointer;
+}
+
+.loginForm>p, .registerForm>p {
+    margin: 1.5em auto;
+}
+
+.loginForm>p>span, .registerForm>p>span {
+    margin-left: 0.5em;
+}
