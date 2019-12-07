@@ -17,9 +17,7 @@ function Login() {
                 <button type="button">Login</button>
             </div>
             <p>Don't have an account?
-                <span>
-                    <ReactRouterDomLink to="/register">Sign up</ReactRouterDomLink>
-                </span>
+                <ReactRouterDomLink className="login-register-link" to="/register">Sign up</ReactRouterDomLink>
             </p>
         </form>
     </div>

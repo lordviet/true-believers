@@ -58,6 +58,12 @@
     margin: 1.5em auto;
 }
 
-.loginForm>p>span, .registerForm>p>span {
+/* .loginForm>p>span, .registerForm>p>span {
+    margin-left: 0.5em;
+} */
+
+.login-register-link {
+    text-decoration: none;
+    color: rgb(9, 144, 255);
     margin-left: 0.5em;
 }

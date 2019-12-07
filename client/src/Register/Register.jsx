@@ -20,9 +20,7 @@ function Register() {
                 <button type="button">Register</button>
             </div>
             <p>Already have an account?
-                <span>
-                    <ReactRouterDomLink to="/login">Sign in</ReactRouterDomLink>
-                </span>
+                <ReactRouterDomLink className="login-register-link" to="/login">Sign in</ReactRouterDomLink>
             </p>
         </form>
     </div>
