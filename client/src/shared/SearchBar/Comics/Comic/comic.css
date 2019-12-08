@@ -57,7 +57,18 @@
     justify-content: space-evenly;
 }
 
-.back>button {
+/* .back>button {
+    background-color: #F11E22;
+    width: 125px;
+    border: none;
+    color: #fff;
+    padding: 1em 0.7em;
+    text-align: center;
+    text-decoration: none;
+    font-size: 1em;
+} */
+
+.linkButton {
     background-color: #F11E22;
     width: 125px;
     border: none;
@@ -68,6 +79,6 @@
     font-size: 1em;
 }
 
-.back>button:hover{
+.linkButton:hover{
     cursor: pointer;
 }

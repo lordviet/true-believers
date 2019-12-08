@@ -11,7 +11,6 @@ class SearchBar extends React.Component {
             result: {},
             message: '',
             loading: false,
-            characterInfo: null
         }
     }
 
@@ -60,7 +59,6 @@ class SearchBar extends React.Component {
                 <input type="text" placeholder="(ex. Hulk, Spider-man, Iron man)" onChange={this.changeHandler} />
                 <button type="button" onClick={this.submitSearch}>Search</button>
             </form>
-            {/* {characterInfo ? () => <Character {...characterInfo} /> : <p>Hey</p>} */}
             {this.renderSearchResult()}
         </div>
     };

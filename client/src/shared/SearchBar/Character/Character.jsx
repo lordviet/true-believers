@@ -3,7 +3,6 @@ import './character.css';
 import Comics from '../Comics/Comics';
 function Character(characterInfo) {
     const characterImg = characterInfo.thumbnail.path + '.' + characterInfo.thumbnail.extension;
-    // let comics = characterInfo.comics.items;
     return <div className="queryResult">
         <div className="character">
             <img className="characterImg" src={characterImg} alt="" />
