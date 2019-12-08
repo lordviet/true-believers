@@ -16,7 +16,7 @@ function Comic(comicInfo) {
                 <Link className="linkButton"
                     to={{
                         pathname: `/comics/${comicInfo.id}`,
-                        state: { comicId: comicInfo.id }
+                        state: { id: comicInfo.id }
                     }}>More details</Link>
             </div>
         </div>

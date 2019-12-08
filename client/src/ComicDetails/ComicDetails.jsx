@@ -14,10 +14,10 @@ class ComicDetails extends React.Component {
     }
 
     componentDidMount() {
-        const comicId = this.props.location.state.comicId;
+        const id = this.props.location.state.id;
         this.setState({ message: '', loading: true, comics: null }, () => {
             marvelAPI.comics
-                .find(comicId)
+                .find(id)
                 .then(comic => this.setState({ comic: comic.data }))
                 .fail(err => this.setState({ message: err }))
                 .done();

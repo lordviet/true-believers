@@ -22,6 +22,7 @@ class Login extends React.Component {
         alert('Authentication coming soon!');
     }
     render() {
+        console.log(this.props.history);
         return <div className="login">
             <img src="marvelAvengers.png" alt="Marvel Avengers" />
             <form onSubmit={this.onSubmit} className="loginForm">

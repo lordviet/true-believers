@@ -1,6 +1,7 @@
 import React from 'react';
 import '../shared/styles/login-register.css';
 import { Link as ReactRouterDomLink } from 'react-router-dom';
+import userService from '../services/user-service';
 
 class Register extends React.Component {
     constructor(props) {
@@ -21,8 +22,31 @@ class Register extends React.Component {
 
     onSubmit = (event) => {
         event.preventDefault();
-        alert('Authentication coming soon!');
+        // const { username, password } = this.state;
+        // console.log(username, password);
+        // userService.register({...this.state}).catch(err => console.log(err));
+        fetch('http://localhost:9999/api/user/register', {
+            method: 'POST',
+            body: JSON.stringify(this.state),
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        })
+            .then(res => {
+                if (res.status === 200) {
+                    this.props.history.push('/');
+                } else {
+                    const error = new Error(res.error);
+                    console.log(error);
+                    throw error;
+                }
+            })
+            .catch(err => {
+                console.error(err);
+                alert('Error with registration please try again');
+            });
     }
+
 
     render() {
         return <div className="register">
@@ -49,7 +73,7 @@ class Register extends React.Component {
                         required />
                 </div>
                 <div className="form-input">
-                <input
+                    <input
                         name="rePassword"
                         type="password"
                         placeholder="Password"
@@ -58,7 +82,7 @@ class Register extends React.Component {
                         required />
                 </div>
                 <div className="form-input">
-                    <button type="button">Register</button>
+                    <button type="submit">Register</button>
                 </div>
                 <p>Already have an account?
                 <ReactRouterDomLink className="login-register-link" to="/login">Sign in</ReactRouterDomLink>

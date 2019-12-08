@@ -19,7 +19,7 @@ const userSchema = new Schema({
         required: true
     },
 
-    reviews: [{ type: ObjectId, ref: 'Review' }],
+    // reviews: [{ type: ObjectId, ref: 'Review' }],
 
     // TODO COMIC BOOK COLLECTION
 });
