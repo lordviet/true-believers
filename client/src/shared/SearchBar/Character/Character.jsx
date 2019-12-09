@@ -1,6 +1,7 @@
 import React from 'react';
 import './character.css';
 import Comics from '../Comics/Comics';
+
 function Character(characterInfo) {
     const characterImg = characterInfo.thumbnail.path + '.' + characterInfo.thumbnail.extension;
     return <div className="queryResult">

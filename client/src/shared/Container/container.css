@@ -1,3 +1,25 @@
-.details>img{
+.details {
+    display: flex;
+    /* border: 1px solid #444; */
+    background: #444;
+    color: #fff;
+    margin: 2em auto;
+    width: 1200px;
+    justify-content: flex-start;
+}
+
+.details>img {
     width: 350px;
+}
+.details-info{
+    margin: 1em 2em;
+}
+.container-list>ul {
+    /* display: flex; */
+    justify-content: flex-start;
+    list-style-type: none;
+}
+
+.container-list>ul>li {
+   
 }
