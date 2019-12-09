@@ -10,8 +10,9 @@ export default function withAuth(ComponentToProtect) {
             };
         }
         componentDidMount() {
-            fetch('/http://localhost:8080/auth', { credentials: "include" })
+            fetch('http://localhost:8080/auth', { credentials: "include" })
                 .then(res => {
+                    console.log(res);
                     if (res.status === 200) {
                         this.setState({ loading: false });
                     } else {
