@@ -1,7 +1,7 @@
 import React from 'react';
 import '../shared/styles/login-register.css';
 import { Link as ReactRouterDomLink } from 'react-router-dom';
-import userService from '../services/user-service';
+// import userService from '../services/user-service';
 
 class Register extends React.Component {
     constructor(props) {
@@ -25,7 +25,7 @@ class Register extends React.Component {
         // const { username, password } = this.state;
         // console.log(username, password);
         // userService.register({...this.state}).catch(err => console.log(err));
-        fetch('http://localhost:9999/api/user/register', {
+        fetch('http://localhost:8080/api/user/register', {
             method: 'POST',
             body: JSON.stringify(this.state),
             headers: {
@@ -34,7 +34,7 @@ class Register extends React.Component {
         })
             .then(res => {
                 if (res.status === 200) {
-                    this.props.history.push('/');
+                    this.props.history.push('/login');
                 } else {
                     const error = new Error(res.error);
                     console.log(error);

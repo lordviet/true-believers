@@ -19,10 +19,30 @@ class Login extends React.Component {
 
     onSubmit = (event) => {
         event.preventDefault();
-        alert('Authentication coming soon!');
+        fetch('http://localhost:8080/api/user/login', {
+            method: 'POST',
+            body: JSON.stringify(this.state),
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            credentials: 'include'
+        })
+            .then(res => {
+                if (res.status === 200) {
+                    this.props.history.push('/');
+                } else {
+                    const error = new Error(res.error);
+                    console.log(error);
+                    throw error;
+                }
+            })
+            .catch(err => {
+                console.error(err);
+                alert('Error logging in please try again');
+            });
     }
     render() {
-        console.log(this.props.history);
+        // console.log(this.props.history);
         return <div className="login">
             <img src="marvelAvengers.png" alt="Marvel Avengers" />
             <form onSubmit={this.onSubmit} className="loginForm">
