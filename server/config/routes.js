@@ -10,6 +10,5 @@ module.exports = (app) => {
     app.get('/auth', withAuth, function (req, res) {
         res.sendStatus(200);
     });
-    // app.use('/api/auth', router.auth);
     app.use('*', (req, res, next) => res.send('<h1> Something went wrong. Try again. :thumbsup: </h1>'))
 };
