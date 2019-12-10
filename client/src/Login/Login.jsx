@@ -29,6 +29,7 @@ class Login extends React.Component {
         })
             .then(res => {
                 if (res.status === 200) {
+                    this.props.setLoggedIn(true);
                     this.props.history.push('/');
                 } else {
                     const error = new Error(res.error);
@@ -42,7 +43,6 @@ class Login extends React.Component {
             });
     }
     render() {
-        // console.log(this.props.history);
         return <div className="login">
             <img src="marvelAvengers.png" alt="Marvel Avengers" />
             <form onSubmit={this.onSubmit} className="loginForm">

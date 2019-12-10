@@ -1,7 +1,6 @@
 import React from 'react';
 import '../shared/styles/login-register.css';
 import { Link as ReactRouterDomLink } from 'react-router-dom';
-// import userService from '../services/user-service';
 
 class Register extends React.Component {
     constructor(props) {
@@ -22,9 +21,6 @@ class Register extends React.Component {
 
     onSubmit = (event) => {
         event.preventDefault();
-        // const { username, password } = this.state;
-        // console.log(username, password);
-        // userService.register({...this.state}).catch(err => console.log(err));
         fetch('http://localhost:8080/api/user/register', {
             method: 'POST',
             body: JSON.stringify(this.state),
