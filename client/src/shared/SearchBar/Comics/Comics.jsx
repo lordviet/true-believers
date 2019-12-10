@@ -2,6 +2,8 @@ import React from 'react';
 import './comics.css';
 import marvelAPI from '../../../services/marvel-api';
 import Comic from './Comic/Comic';
+import Loader from '../../Loader/Loader';
+
 
 class ComicsList extends React.Component {
     constructor(props) {
@@ -27,13 +29,14 @@ class ComicsList extends React.Component {
 
     componentDidUpdate(prevProps) {
         if (this.props.characterId !== prevProps.characterId) {
+            setTimeout(
             this.setState({ message: '', loading: true, comics: null }, () => {
                 marvelAPI.characters
                     .comics(this.props.characterId, 10, 10)
                     .then(list => this.setState({ comics: list.data }))
                     .fail(err => this.setState({ message: err }))
                     .done();
-            });
+            }), 1000);
         }
     }
     
@@ -41,7 +44,7 @@ class ComicsList extends React.Component {
         const { comics } = this.state;
         return (
             <div className="comics">
-                {comics ? comics.map((comic) => <Comic key={comic.id} {...comic} />) : <p>Loading</p>}
+                {comics ? comics.map((comic) => <Comic key={comic.id} {...comic} />) : <Loader/>}
             </div>)
     };
 }

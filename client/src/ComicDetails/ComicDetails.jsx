@@ -1,7 +1,8 @@
 import React from 'react';
 import './comic-details.css';
 import marvelAPI from '../services/marvel-api';
-import Container from '../shared/Container/Container'
+import Container from '../shared/Container/Container';
+import Loader from '../shared/Loader/Loader';
 
 class ComicDetails extends React.Component {
     constructor(props) {
@@ -9,7 +10,7 @@ class ComicDetails extends React.Component {
         this.state = {
             comic: {},
             message: '',
-            loading: false
+            loading: true
         }
     }
 
@@ -19,8 +20,8 @@ class ComicDetails extends React.Component {
         this.setState({ message: '', loading: true, comics: null }, () => {
             marvelAPI.comics
                 .find(comicId)
-                .then(comic => this.setState({ comic: comic.data }))
-                .fail(err => this.setState({ message: err }))
+                .then(comic => this.setState({ comic: comic.data, loading: false }))
+                .fail(err => this.setState({ message: err, loading: false }))
                 .done();
         });
 
@@ -37,7 +38,7 @@ class ComicDetails extends React.Component {
 
     render() {
         return <section className="comic-details">
-            {this.renderSearchResult()}
+            {this.state.loading ? <Loader/> : this.renderSearchResult()}
         </section>
     }
 }

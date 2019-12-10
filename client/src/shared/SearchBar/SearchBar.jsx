@@ -1,7 +1,8 @@
 import React from 'react';
 import './search-bar.css';
 import marvelAPI from '../../services/marvel-api';
-import Character from './Character/Character'
+import Character from './Character/Character';
+import Loader from '../Loader/Loader';
 
 class SearchBar extends React.Component {
     constructor(props) {
@@ -16,7 +17,7 @@ class SearchBar extends React.Component {
 
     changeHandler = (event) => {
         const query = event.target.value;
-        this.setState({ query, message: '', loading: true }) // why do I need the loading
+        this.setState({ query, message: '', loading: false }) // why do I need the loading
     }
 
     submitSearch = () => {
@@ -25,18 +26,19 @@ class SearchBar extends React.Component {
             this.setState({ query, result: {}, message: '' });
         }
         else {
-            this.setState({ query, message: '', loading: true },
+            setTimeout(this.setState({ query, message: '', loading: true },
                 () => {
                     marvelAPI.characters
                         .findByName(query)
                         .then(res => {
                             res.data.length !== 0 ?
-                                this.setState({ result: res }) :
-                                this.setState({ result: {}, message: 'Not found' }); // render errors here
+                                this.setState({ result: res, loading: false }) :
+                                this.setState({ result: {}, message: 'Not found', loading: false }); // render errors here
                         })
                         .fail(console.err)
                         .done();
-                });
+                }), 1000)
+
             // this.renderSearchResult();
         }
     }
@@ -45,10 +47,7 @@ class SearchBar extends React.Component {
         const { result } = this.state; // check for message?
         if (Object.keys(result).length && result.data.length) {
             const characterInfo = result.data[0];
-            // console.log(characterInfo);
-            // console.log(characterInfo.comics.items);
             return <Character {...characterInfo} />
-            // this.setState({ characterInfo })
         }
     }
 
@@ -59,7 +58,7 @@ class SearchBar extends React.Component {
                 <input type="text" placeholder="(ex. Hulk, Spider-man, Iron man)" onChange={this.changeHandler} />
                 <button type="button" onClick={this.submitSearch}>Search</button>
             </form>
-            {this.renderSearchResult()}
+            {this.state.loading ? <Loader /> : this.renderSearchResult()}
         </div>
     };
 }
