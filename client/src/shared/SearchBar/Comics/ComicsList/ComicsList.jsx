@@ -1,8 +1,8 @@
 import React from 'react';
-import './comics.css';
-import marvelAPI from '../../../services/marvel-api';
-import Comic from './Comic/Comic';
-import Loader from '../../Loader/Loader';
+import './comics-list.css';
+import marvelAPI from '../../../../services/marvel-api';
+import Comic from '../Comic/Comic';
+import Loader from '../../../Loader/Loader';
 
 
 class ComicsList extends React.Component {
