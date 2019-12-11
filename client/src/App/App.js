@@ -6,6 +6,7 @@ import Login from '../Login/Login';
 import Logout from '../Logout/Logout';
 import Register from '../Register/Register';
 import ComicDetails from '../ComicDetails/ComicDetails';
+import CreatorDetails from '../CreatorDetails/CreatorDetails';
 import withAuth from '../shared/withAuth/withAuth';
 
 import {
@@ -37,6 +38,7 @@ function App() {
           <Route path='/register' component={Register} />
           <Route path='/logout' render={(props) => <Logout {...{ setLoggedIn, ...props }} />} />
           <Route path='/comics/:id' component={withAuth(ComicDetails)} />
+          <Route path='/creators/:id' component={withAuth(CreatorDetails)} />
         </Switch>
       </div>
     </Router>
