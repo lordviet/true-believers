@@ -32,12 +32,3 @@
     font-size: 2em;
     letter-spacing: 2px;
 }
-
-.characterAppearances {
-    display: flex;
-    justify-content: flex-start;
-}
-
-.characterAppearances>p {
-    margin-right: 2em;
-}

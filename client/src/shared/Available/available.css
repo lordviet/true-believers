@@ -1,0 +1,8 @@
+.available-comics {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.available-comics>p {
+    margin-right: 2em;
+}
