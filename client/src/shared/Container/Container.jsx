@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import Image from '../Image/Image';
 
 function Container(info) {
-
+    console.log(info);
     let characterIds = {};
     if (info.characters) info.characters.items.forEach(el => characterIds[el.name] = el.resourceURI.split('/').pop());
 
@@ -20,7 +20,7 @@ function Container(info) {
                 <div className="container-list">
                     <h3>Characters:</h3>
                     {info.characters.items.map(character =>
-                        <Link to={{
+                        <Link className="container-item" to={{
                             pathname: `/characters/${characterIds[character.name]}`,
                             state: { characterId: characterIds[character.name] }
                         }}
@@ -33,16 +33,19 @@ function Container(info) {
                 <div className="container-list">
                     <h3>Creators: </h3>
                     {info.creators.items.map(creator =>
-                        <Link to={{
+                        <Link className="container-item" to={{
                             pathname: `/creators/${creatorIds[creator.name]}`,
                             state: { creatorId: creatorIds[creator.name] }
                         }}
                             key={creatorIds[creator.name]}>
-                            {creator.role}: {creator.name}</Link>)}
+                            {creator.name} ({creator.role})</Link>)}
                 </div>
                 : null
             }
-            {/* Add buttons */}
+            <div className="additional-links">
+                {/* eslint-disable-next-line react/jsx-no-target-blank */}
+                {info.urls[1] ? <a className="linkButton" href={info.urls[1].url} target="_blank">Purchase</a> : null}
+            </div>
         </div>
     </div>
 }

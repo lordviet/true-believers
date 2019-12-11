@@ -1,6 +1,5 @@
 .details {
     display: flex;
-    /* border: 1px solid #444; */
     background: #444;
     color: #fff;
     margin: 2em auto;
@@ -14,12 +13,26 @@
 .details-info{
     margin: 1em 2em;
 }
-.container-list>ul {
-    /* display: flex; */
-    justify-content: flex-start;
-    list-style-type: none;
+
+.container-list{
+    margin: 1.5em 0;
+}
+.container-list>h3{
+    margin: 0.2em 0;
+}
+.container-item{
+    display: inline-block;
+    text-decoration: none;
+    margin-right: 0.8em;
+    padding: 0.25em;
+    margin-left: -0.25em;
+    color: #fff;
+    transition: all .2s;
 }
 
-.container-list>ul>li {
-   
+.container-item:active,
+.container-item:hover{
+    background-color: #F11E22;
+    transform: rotate(5deg) scale(1.2);
+    padding-left: 0.25em;
 }
