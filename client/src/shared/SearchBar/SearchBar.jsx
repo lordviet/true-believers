@@ -20,7 +20,8 @@ class SearchBar extends React.Component {
         this.setState({ query, message: '', loading: false }) // why do I need the loading
     }
 
-    submitSearch = () => {
+    submitSearch = (e) => {
+        e.preventDefault();
         let query = this.state.query;
         if (!query) {
             this.setState({ query, result: {}, message: '' });
@@ -38,8 +39,6 @@ class SearchBar extends React.Component {
                         .fail(console.err)
                         .done();
                 }), 1000)
-
-            // this.renderSearchResult();
         }
     }
 
@@ -52,11 +51,10 @@ class SearchBar extends React.Component {
     }
 
     render() {
-        // const characterInfo = this.characterInfo;
         return <div>
             <form action="" className="search-bar">
                 <input type="text" placeholder="(ex. Hulk, Spider-man, Iron man)" onChange={this.changeHandler} />
-                <button type="button" onClick={this.submitSearch}>Search</button>
+                <button type="submit" onClick={this.submitSearch}>Search</button>
             </form>
             {this.state.loading ? <Loader /> : this.renderSearchResult()}
         </div>
