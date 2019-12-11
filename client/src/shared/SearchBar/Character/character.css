@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Bangers&display=swap');
+
 .queryResult {
     width: 1200px;
     margin: 2em auto;
@@ -26,7 +28,9 @@
 }
 
 .characterInfo>h2 {
-    /* add font */
+    font-family: 'Bangers', cursive;
+    font-size: 2em;
+    letter-spacing: 2px;
 }
 
 .characterAppearances {
