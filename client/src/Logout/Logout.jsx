@@ -6,7 +6,6 @@ class Logout extends React.Component {
         userService.logout().then(() => {
             this.props.setLoggedIn(false);
             this.props.history.push('/');
-            return null;
         });
     }
     render(){
