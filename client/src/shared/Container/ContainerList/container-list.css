@@ -1,0 +1,16 @@
+.container-item{
+    display: inline-block;
+    text-decoration: none;
+    margin-right: 0.8em;
+    padding: 0.25em;
+    margin-left: -0.25em;
+    color: #fff;
+    transition: all .2s;
+}
+
+.container-item:active,
+.container-item:hover{
+    background-color: #F11E22;
+    transform: rotate(5deg) scale(1.2);
+    padding-left: 0.25em;
+}
