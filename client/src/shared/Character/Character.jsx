@@ -1,13 +1,13 @@
 import React from 'react';
 import './character.css';
-import ComicsList from '../Comics/ComicsList/ComicsList';
-import Available from '../../Available/Available';
+import ComicsList from '../SearchBar/Comics/ComicsList/ComicsList';
+import Available from '../Available/Available';
+import Image from '../Image/Image';
 
 function Character(characterInfo) {
-    const characterImg = characterInfo.thumbnail.path + '.' + characterInfo.thumbnail.extension;
     return <div className="queryResult">
         <div className="character">
-            <img className="characterImg" src={characterImg} alt="" />
+            <Image {...characterInfo.thumbnail} isCharacter={true} />
             <div className="characterInfo">
                 <h2>{characterInfo.name}</h2>
                 <p>{characterInfo.description}</p>

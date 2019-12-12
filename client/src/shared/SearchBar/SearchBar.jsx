@@ -1,7 +1,7 @@
 import React from 'react';
 import './search-bar.css';
 import marvelAPI from '../../services/marvel-api';
-import Character from './Character/Character';
+import Character from '../Character/Character';
 import Loader from '../Loader/Loader';
 
 class SearchBar extends React.Component {
