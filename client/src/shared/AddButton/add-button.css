@@ -1,0 +1,9 @@
+.add-button{
+    margin-left: 2em;
+    font-size: 1em;
+    outline: none;
+    padding: 1em 0.7em;
+    border: none;
+    background: #F11E22;
+    color: #fff;
+}
