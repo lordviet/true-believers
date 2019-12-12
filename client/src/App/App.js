@@ -5,9 +5,8 @@ import Home from '../Home/Home';
 import Login from '../Login/Login';
 import Logout from '../Logout/Logout';
 import Register from '../Register/Register';
-import ComicDetails from '../ComicDetails/ComicDetails';
-import CreatorDetails from '../CreatorDetails/CreatorDetails';
 import withAuth from '../shared/withAuth/withAuth';
+import Details from '../Details/Details';
 
 import {
   BrowserRouter as Router,
@@ -27,18 +26,19 @@ function parseCookies() {
 function App() {
   let cookie = parseCookies();
   const [loggedIn, setLoggedIn] = useState(!!Object.keys(cookie)[0]);
-
+  
   return (
     <Router>
       <div className="App">
         <Navigation {...{ loggedIn }} />
         <Switch>
           <Route exact path="/" component={Home} />
-          <Route path='/login' render={(props) => <Login {...{ setLoggedIn, ...props }} />} />
+          <Route path='/login' render={props => <Login {...{ setLoggedIn, ...props }} />} />
+          <Route path='/logout' render={props => <Logout {...{ setLoggedIn, ...props }} />} />
           <Route path='/register' component={Register} />
-          <Route path='/logout' render={(props) => <Logout {...{ setLoggedIn, ...props }} />} />
-          <Route path='/comics/:id' component={withAuth(ComicDetails)} />
-          <Route path='/creators/:id' component={withAuth(CreatorDetails)} />
+          <Route path='/comics/:id' component={withAuth((props) => { return <Details criteria='comics' {...props} /> })} />
+          <Route path='/creators/:id' component={withAuth((props) => { return <Details criteria='creators' {...props} /> })} />
+          <Route path='/characters/:id' component={withAuth((props) => { return <Details criteria='characters' {...props} /> })} />
         </Switch>
       </div>
     </Router>
