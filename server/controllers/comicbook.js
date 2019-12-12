@@ -10,7 +10,6 @@ module.exports = {
     post: (req, res, next) => {
         const { name, comicId } = req.body;
         const { _id } = req.user;
-        console.log(_id);
         models.Comicbook.create({ name, comicId, user: _id })
             .then((comic) => {
                 return Promise.all([
@@ -33,9 +32,18 @@ module.exports = {
     // },
 
     delete: (req, res, next) => {
-        const id = req.params.id;
-        models.Comicbook.deleteOne({ _id: id })
-            .then((deletedComicbook) => res.send(deletedComicbook))
+        const comicId = req.params.id;
+        const userId = req.user;
+        models.Comicbook.findOneAndDelete({ comicId, user: userId })
+            .then((deletedComicbook) => {
+                console.log("id is " + deletedComicbook._id);
+                models.User
+                    .updateOne({ _id: userId }, { $pull: { comicCollection: deletedComicbook._id } })
+                    .then(res => console.log(res))
+                    .catch(err => console.log('errr ' + err));
+                res.send(deletedComicbook)
+            })
             .catch(next)
+
     }
 };

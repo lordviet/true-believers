@@ -20,10 +20,11 @@ function AddButton(props) {
         e.preventDefault();
         // set status and create or delete
         if(status === 'Add to Collection'){
-            postService.addToCollection({...props})
+            postService.addToCollection({...props});
             setStatus('Remove from Collection');
         } 
         else {
+            postService.deleteFromCollection(props.comicId);
             setStatus('Add to Collection');
         }
     }

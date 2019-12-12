@@ -4,7 +4,7 @@ const Model = mongoose.model;
 const { String, Number, Boolean, ObjectId } = Schema.Types;
 
 const comicbookSchema = new Schema({
-
+    
     user: {
         type: ObjectId,
         ref: 'User',
@@ -17,7 +17,8 @@ const comicbookSchema = new Schema({
     
     comicId: {
         type: String,
-        required: true
+        required: true,
+        unique: true
     }
 
 });
