@@ -5,8 +5,7 @@ const withAuth = require('../utils/withAuth');
 module.exports = (app) => {
 
     app.use('/api/user', router.user);
-    // app.use('/api/')
-    // app.use('/api/review', router.review);
+    app.use('/api/comicbook', router.comicbook);
     app.get('/auth', withAuth, function (req, res) {
         res.sendStatus(200);
     });
