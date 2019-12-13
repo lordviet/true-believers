@@ -15,6 +15,9 @@ class Details extends React.Component {
     }
 
     componentDidMount() {
+        this.props.criteria === 'characters' ?
+            this.props.changeBackground('') :
+            this.props.changeBackground('details-collection-bg')
         const id = this.props.location.state.id;
         this.setState({ message: '', loading: true, comics: null }, () => {
             marvelAPI[this.props.criteria]
@@ -30,13 +33,13 @@ class Details extends React.Component {
         const { result } = this.state; // check for message?
         if (Object.keys(result).length) {
             const info = result[0]
-            return this.props.criteria === 'characters' ? <Character {...info}/> : <Container {...info} />;
+            return this.props.criteria === 'characters' ? <Character {...info} /> : <Container {...info} />;
         }
     }
 
     render() {
         return <section>
-            {this.state.loading ? <Loader/> : this.renderSearchResult()}
+            {this.state.loading ? <Loader /> : this.renderSearchResult()}
         </section>
     }
 }

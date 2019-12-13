@@ -8,6 +8,7 @@ import Register from '../Register/Register';
 import withAuth from '../shared/withAuth/withAuth';
 import Details from '../Details/Details';
 import Collection from '../Collection/Collection';
+import Series from '../Series/Series';
 
 import {
   BrowserRouter as Router,
@@ -27,20 +28,22 @@ function parseCookies() {
 function App() {
   let cookie = parseCookies();
   const [loggedIn, setLoggedIn] = useState(!!Object.keys(cookie)[0]);
-  
+  const [background, changeBackground] = useState('');
+
   return (
     <Router>
-      <div className="App">
+      <div className={background}>
         <Navigation {...{ loggedIn }} />
         <Switch>
-          <Route exact path="/" component={Home} />
+          <Route exact path="/" render={props => <Home {...{ changeBackground, ...props }} />} />
           <Route path='/login' render={props => <Login {...{ setLoggedIn, ...props }} />} />
           <Route path='/logout' render={props => <Logout {...{ setLoggedIn, ...props }} />} />
           <Route path='/register' component={Register} />
-          <Route path='/collection' component={Collection} />
-          <Route path='/comics/:id' component={withAuth((props) => { return <Details criteria='comics' {...props} /> })} />
-          <Route path='/creators/:id' component={withAuth((props) => { return <Details criteria='creators' {...props} /> })} />
-          <Route path='/characters/:id' component={withAuth((props) => { return <Details criteria='characters' {...props} /> })} />
+          <Route path='/series' component={withAuth((props) => { return <Series {...{ changeBackground, ...props }} /> })} />
+          <Route path='/collection' component={withAuth((props) => { return <Collection {...{ changeBackground, ...props }} /> })} />
+          <Route path='/comics/:id' component={withAuth((props) => { return <Details criteria='comics' {...{ changeBackground, ...props }} /> })} />
+          <Route path='/creators/:id' component={withAuth((props) => { return <Details criteria='creators' {...{ changeBackground, ...props }} /> })} />
+          <Route path='/characters/:id' component={withAuth((props) => { return <Details criteria='characters' {...{ changeBackground, ...props }} /> })} />
         </Switch>
       </div>
     </Router>

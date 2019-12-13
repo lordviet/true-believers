@@ -6,10 +6,12 @@ function ContainerList(props) {
     const items = props.items;
     let ids = {};
 
-    items[0].resourceURI ?
-        items.forEach(el => ids[el.name] = el.resourceURI.split('/').pop()) :
-        items.forEach(el => ids[el.name] = el.comicId);
-
+    if (items.length) {
+        items[0].resourceURI ?
+            items.forEach(el => ids[el.name] = el.resourceURI.split('/').pop()) :
+            items.forEach(el => ids[el.name] = el.comicId);
+    }
+    
     return <div className="container-list">
         <h3>{props.heading}</h3>
         {items.map(el =>

@@ -1,6 +1,7 @@
 import React from 'react';
 import './navigation.css';
 import Link from '../shared/Link/Link';
+import Search from './Search/Search';
 
 
 function Navigation({ loggedIn }) {
@@ -10,6 +11,7 @@ function Navigation({ loggedIn }) {
             <nav className="navbar">
                 {!loggedIn && <Link to="/login">Log in</Link>}
                 {!loggedIn && <Link to="/register">Register</Link>}
+                {loggedIn && <Search />}
                 {loggedIn && <Link to="/collection">My Collection</Link>}
                 {loggedIn && <Link to="/logout">Logout</Link>}
             </nav>

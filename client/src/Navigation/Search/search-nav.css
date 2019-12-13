@@ -1,0 +1,21 @@
+.search-nav-form {
+    margin: 0em 2em;
+}
+
+.search-nav-form > input{
+    padding: 0.6em;
+    width: 200px;
+}
+
+.search-nav-form > button {
+    padding: 0.6em;
+    background: #F11E22;
+    border-color: #F11E22;
+    transition: all .2s ease-in-out;
+}
+
+.search-nav-form > button:hover{
+    color: #fff;
+    cursor: pointer;
+}
+

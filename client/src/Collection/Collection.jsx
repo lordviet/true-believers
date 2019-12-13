@@ -3,7 +3,8 @@ import './collection.css';
 import postService from '../services/post-service';
 import ContainerList from '../shared/Container/ContainerList/ContainerList'
 
-function Collection() {
+function Collection(props) {
+    props.changeBackground('details-collection-bg');
     const [comics, setComics] = useState([]);
     useEffect(() => {
         postService.getAllComics()

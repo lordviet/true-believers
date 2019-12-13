@@ -3,6 +3,7 @@
     background: #444;
     color: #fff;
     margin: 2em auto;
+    /* margin-bottom: 0em; */
     width: 1200px;
     justify-content: flex-start;
     border: 1px solid #444;
