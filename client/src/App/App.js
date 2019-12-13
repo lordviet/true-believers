@@ -7,6 +7,7 @@ import Logout from '../Logout/Logout';
 import Register from '../Register/Register';
 import withAuth from '../shared/withAuth/withAuth';
 import Details from '../Details/Details';
+import Collection from '../Collection/Collection';
 
 import {
   BrowserRouter as Router,
@@ -36,6 +37,7 @@ function App() {
           <Route path='/login' render={props => <Login {...{ setLoggedIn, ...props }} />} />
           <Route path='/logout' render={props => <Logout {...{ setLoggedIn, ...props }} />} />
           <Route path='/register' component={Register} />
+          <Route path='/collection' component={Collection} />
           <Route path='/comics/:id' component={withAuth((props) => { return <Details criteria='comics' {...props} /> })} />
           <Route path='/creators/:id' component={withAuth((props) => { return <Details criteria='creators' {...props} /> })} />
           <Route path='/characters/:id' component={withAuth((props) => { return <Details criteria='characters' {...props} /> })} />

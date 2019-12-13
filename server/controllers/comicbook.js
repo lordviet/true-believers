@@ -2,10 +2,17 @@ const models = require('../models');
 
 module.exports = {
     get: (req, res, next) => {
-        const  comicId  = req.params.id;
+        const comicId = req.params.id;
         const { _id } = req.user;
         models.Comicbook.find({ comicId, user: _id })
             .then((comic) => res.send(comic))
+            .catch(next);
+    },
+
+    getAll: (req, res, next) => {
+        const { _id } = req.user;
+        models.Comicbook.find({ user: _id })
+            .then((comics) => res.send(comics))
             .catch(next);
     },
 

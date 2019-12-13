@@ -6,12 +6,12 @@ function AddButton(props) {
     const [status, setStatus] = useState(null);
     // props should be comicId, comicName
     useEffect(() => {
-        postService.getComics(props.comicId)
+        postService.getComic(props.comicId)
             .then(res => res.length ?
                 setStatus('Remove from Collection') :
                 setStatus('Add to Collection'));
     }, [props.comicId]);
-   
+    
     const addToCollection = (e) => {
         e.preventDefault();
         if (status === 'Add to Collection') {

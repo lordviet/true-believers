@@ -1,0 +1,15 @@
+.user-comics {
+    width: 1200px;
+    margin: 2em auto;
+    background: #444;
+    color: #fff;
+    padding: 1em;
+}
+
+.user-comics > h2{
+    font-size: 1.5em;
+}
+
+.user-comics > h3{
+    margin: 2em auto;
+}

@@ -1,5 +1,5 @@
 const postService = {
-    getComics: function (comicId) {
+    getComic: function (comicId) {
         return fetch(`http://localhost:8080/api/comicbook/${comicId}`, {
             method: 'GET',
             headers: {
@@ -10,8 +10,19 @@ const postService = {
             .then(res => res.json())
             .catch(err => console.error(err));
     },
-    
-    
+
+    getAllComics: function () {
+        return fetch(`http://localhost:8080/api/comicbook`, {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            credentials: 'include'
+        })
+            .then(res => res.json())
+            .catch(err => console.error(err));
+    },
+
     addToCollection: function (data) {
         return fetch('http://localhost:8080/api/comicbook', {
             method: 'POST',
