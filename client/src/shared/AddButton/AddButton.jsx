@@ -5,30 +5,25 @@ import postService from '../../services/post-service';
 function AddButton(props) {
     const [status, setStatus] = useState(null);
     // props should be comicId, comicName
-    console.log(props.comicId, props.name);
     useEffect(() => {
-        // Make initial request to db
-        setStatus('Add to Collection');
-    }, []);
-    // Otherwise set status to remove from collection
-
-    // const changeStatus = () => {
-    //     status ? 'Add to Collection'
-    // }
-
+        postService.getComics(props.comicId)
+            .then(res => res.length ?
+                setStatus('Remove from Collection') :
+                setStatus('Add to Collection'));
+    }, [props.comicId]);
+   
     const addToCollection = (e) => {
         e.preventDefault();
-        // set status and create or delete
-        if(status === 'Add to Collection'){
-            postService.addToCollection({...props});
+        if (status === 'Add to Collection') {
+            postService.addToCollection({ ...props });
             setStatus('Remove from Collection');
-        } 
+        }
         else {
             postService.deleteFromCollection(props.comicId);
             setStatus('Add to Collection');
         }
     }
-    
+
     return <button className='add-button' onClick={addToCollection}>
         {status}
     </button>
