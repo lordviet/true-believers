@@ -12,7 +12,8 @@ const comicbookSchema = new Schema({
 
     name: {
         type: String,
-        required: true
+        required: true,
+        unique: true
     },
     
     comicId: {

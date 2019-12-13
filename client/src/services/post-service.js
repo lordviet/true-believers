@@ -1,8 +1,6 @@
 const postService = {
-    getComics: function (id) {
-        // Check this
-        // console.log(data);
-        return fetch(`http://localhost:8080/api/comicbook/${id}`, {
+    getComics: function (comicId) {
+        return fetch(`http://localhost:8080/api/comicbook/${comicId}`, {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json'
@@ -15,8 +13,6 @@ const postService = {
     
     
     addToCollection: function (data) {
-        // Check this
-        // console.log(data);
         return fetch('http://localhost:8080/api/comicbook', {
             method: 'POST',
             body: JSON.stringify(data),

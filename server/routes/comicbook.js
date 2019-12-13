@@ -2,7 +2,7 @@ const controllers = require('../controllers');
 const router = require('express').Router();
 const { auth } = require('../utils');
 
-router.get('/', controllers.comicbook.get);
+router.get('/:id', auth(), controllers.comicbook.get);
 
 router.post('/', auth(), controllers.comicbook.post);
 
