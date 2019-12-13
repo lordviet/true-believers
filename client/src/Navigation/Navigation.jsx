@@ -6,7 +6,7 @@ import Link from '../shared/Link/Link';
 function Navigation({ loggedIn }) {
     return <nav className="navigation">
         <ul>
-            <Link to="/" ><img src="logo.png" alt="True Believers Logo" className="logo" /></Link>
+            <Link to="/" ><h2 className="logo">True Believers</h2></Link>
             <nav className="navbar">
                 {!loggedIn && <Link to="/login">Log in</Link>}
                 {!loggedIn && <Link to="/register">Register</Link>}
