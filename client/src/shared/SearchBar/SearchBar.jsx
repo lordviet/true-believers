@@ -48,6 +48,9 @@ class SearchBar extends React.Component {
             const characterInfo = result.data[0];
             return <Character {...characterInfo} />
         }
+        if(this.state.message){
+            return <h2 className="not-found">No results found!</h2>
+        }
     }
 
     render() {
