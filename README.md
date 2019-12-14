@@ -19,20 +19,20 @@ Explore the deepest corners of the Marvel universe.
 
 - Comicbook details
 
-![Details](/images/comicDetails.PNG])
+![Details](/images/comicDetails.PNG)
 
 
 - Creator details
 
-![Creator](/images/creator.PNG])
+![Creator](/images/creator.PNG)
 
 - Reviews
 
-![Review](/images/review.PNG])
+![Review](/images/review.PNG)
 
 - Store in a collection
 
-![Collection](/images/collection.PNG])
+![Collection](/images/collection.PNG)
 
 
 ## Getting Started
