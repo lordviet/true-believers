@@ -31,7 +31,10 @@ export default function withAuth(ComponentToProtect) {
                 return null;
             }
             if (redirect) {
-                return <Redirect to="/login" />;
+                return <Redirect to={{
+                    pathname: "/login",
+                    message: 'You have to login!'
+                }} />;
             }
             return <ComponentToProtect {...this.props} />;
         }

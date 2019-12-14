@@ -10,6 +10,7 @@ class Login extends React.Component {
             password: ''
         };
     }
+
     handleInputChange = (event) => {
         const { value, name } = event.target;
         this.setState({
@@ -43,10 +44,12 @@ class Login extends React.Component {
             });
     }
     render() {
+
         return <div className="login">
             <img src="marvelAvengers.png" alt="Marvel Avengers" />
             <form onSubmit={this.onSubmit} className="loginForm">
                 <h2>Member Login</h2>
+                {this.props.location.message ? <p>{this.props.location.message}</p> : null}
                 <div className="form-input">
                     <input
                         name="username"
