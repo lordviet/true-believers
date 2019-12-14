@@ -9,39 +9,30 @@ Explore the deepest corners of the Marvel universe.
 
 - Search for characters
 
-<div> 
-    <img src="images/search.png">
-</div>
+![Search](/images/search.PNG)
+
 
 - Browse characters and comics
 
-<div> 
-    <img src="images/characterSearch.png">
-</div>
+![Browse](/images/characterSearch.PNG)
+
 
 - Comicbook details
 
-<div> 
-    <img src="images/comicDetails.png">
-</div>
+![Details](/images/comicDetails.PNG])
+
 
 - Creator details
 
-<div> 
-    <img src="images/creator.png">
-</div>
+![Creator](/images/creator.PNG])
 
-- Comicbook details
+- Reviews
 
-<div> 
-    <img src="images/review.png">
-</div>
+![Review](/images/review.PNG])
 
 - Store in a collection
 
-<div> 
-    <img src="images/collection.png">
-</div>
+![Collection](/images/collection.PNG])
 
 
 ## Getting Started
