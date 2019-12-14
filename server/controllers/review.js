@@ -41,8 +41,9 @@ module.exports = {
         const comicId = req.params.id;
         const userId = req.user._id;
         models.Review.findOneAndDelete({ comicId, user: userId })
-            .then(() => {
-                console.log('Review has beed deleted!');
+            .then((deleted) => {
+                console.log('Review has been deleted!');
+                res.send(deleted);
             }).catch(next);
     }
 }

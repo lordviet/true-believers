@@ -1,12 +1,4 @@
-.review {
-    width: 1200px;
-    margin: 2em auto;
-    padding: 1em;
-    background-color: #444;
-    color: #fff;
-}
-
-/* .creator-review-heading{
+.creator-review-heading{
     display: flex;
     justify-content: flex-start;
 }
@@ -29,8 +21,4 @@
 
 .review-btn > i{
     font-size: 2em;
-} */
-
-.review > p{
-    margin: 1.5em 0;
 }
