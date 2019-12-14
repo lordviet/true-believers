@@ -9,6 +9,7 @@ import withAuth from '../shared/withAuth/withAuth';
 import Details from '../Details/Details';
 import Collection from '../Collection/Collection';
 import Series from '../Series/Series';
+import NotFound from '../NotFound/NotFound';
 
 import {
   BrowserRouter as Router,
@@ -44,6 +45,7 @@ function App() {
           <Route path='/comics/:id' component={withAuth((props) => { return <Details criteria='comics' {...{ changeBackground, ...props }} /> })} />
           <Route path='/creators/:id' component={withAuth((props) => { return <Details criteria='creators' {...{ changeBackground, ...props }} /> })} />
           <Route path='/characters/:id' component={withAuth((props) => { return <Details criteria='characters' {...{ changeBackground, ...props }} /> })} />
+          <Route path='/*' component={NotFound}/>
         </Switch>
       </div>
     </Router>
