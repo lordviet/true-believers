@@ -10,7 +10,6 @@ function Review(props) {
                 <h3>{props.details.user.username}</h3>
                 <p>{props.details.review}</p>
             </React.Fragment>}
-        {/* Make a condition to render a textarea if edit btn is pushed */}
     </div>
 }
 

@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import './add-review.css';
 import reviewService from '../../services/review-service';
-// import CreatorReview from '../Review/CreatorReview/CreatorReview';
 import Review from '../Review/Review';
 
 function AddReview(props) {
@@ -12,13 +11,11 @@ function AddReview(props) {
     const submitReview = (e) => {
         e.preventDefault();
         reviewService.addReview({ comicId: props.comicId, review });
-        // props.setReviewStatus(true);
         setHasPosted(true);
     }
     const renderReview = () => {
         if (hasPosted) {
             let details = {comicId: props.comicId, review}
-            // return <CreatorReview setReviewStatus={props.setReviewStatus} comicId={props.comicId} review={review} />;
             return <Review isCreator={true} details={details} setReviewStatus={props.setReviewStatus}/>
         }
         else {

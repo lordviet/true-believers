@@ -17,7 +17,7 @@ class Details extends React.Component {
     componentDidMount() {
         this.props.criteria === 'characters' ?
             this.props.changeBackground('') :
-            this.props.changeBackground('') // details-collection-bg 
+            this.props.changeBackground('search-bg');
         const id = this.props.location.state.id;
         this.setState({ message: '', loading: true, comics: null }, () => {
             marvelAPI[this.props.criteria]

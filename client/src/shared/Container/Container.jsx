@@ -4,10 +4,8 @@ import Image from '../Image/Image';
 import Available from '../Available/Available';
 import ContainerList from '../Container/ContainerList/ContainerList';
 import AddButton from '../AddButton/AddButton';
-// import AddReview from '../AddReview/AddReview';
 import ReviewHandler from '../ReviewHandler/ReviewHandler';
 function Container(info) {
-    console.log(info);
     return <div>
         <div className="details">
             {!info.startYear ? <Image {...info.thumbnail} /> : null}
@@ -26,8 +24,6 @@ function Container(info) {
                 </div> : null}
             </div>
         </div>
-        {/* Make a review component that renders if the user already has published */}
-        {/* {info.title ? <AddReview comicId={info.id} /> : null} */}
         {info.title ? <ReviewHandler comicId={info.id} /> : null}
     </div>
 }
