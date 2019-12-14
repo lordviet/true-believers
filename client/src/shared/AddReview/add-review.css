@@ -1,0 +1,33 @@
+.add-review-form {
+    width: 1200px;
+    margin: 2em auto;
+    padding: 1em;
+    background-color: #444;
+}
+
+.add-review-form>h2 {
+    color: #fff;
+}
+
+.add-review-form>textarea {
+    width: 100%;
+    height: 150px;
+    padding: 12px 20px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    background-color: #f8f8f8;
+    font-size: 1.2em;
+    resize: none;
+    margin: 1em auto;
+}
+
+.add-review-form>button {
+    font-size: 1em;
+    outline: none;
+    padding: 1em 0.7em;
+    border: none;
+    background: #F11E22;
+    color: #fff;
+    display: flex;
+}

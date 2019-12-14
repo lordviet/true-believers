@@ -1,0 +1,36 @@
+.review {
+    width: 1200px;
+    margin: 2em auto;
+    padding: 1em;
+    background-color: #444;
+    color: #fff;
+}
+
+.creator-review-heading{
+    display: flex;
+    justify-content: flex-start;
+}
+
+.creator-review-heading>h3{
+    flex: 1 0 60%;
+}
+.review-btn{
+    color: #fff;
+    margin: 0 0.5em;
+    background: none;
+    border:none;
+    transition: all .2s ease-in-out;
+}
+
+.review-btn:hover{
+    cursor: pointer;
+    color: #F11E22;
+}
+
+.review-btn > i{
+    font-size: 2em;
+}
+
+.review > p{
+    margin: 1.5em 0;
+}

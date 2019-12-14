@@ -9,7 +9,6 @@ function Search() {
     // const [err, setError] = useState('');
 
     const submitSearch = (e) => {
-        console.log(e);
         e.preventDefault();
         marvelAPI.series.findByTitle(comic)
             .then(res => res.data.length ?
