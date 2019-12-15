@@ -30,9 +30,10 @@ module.exports = {
             }).catch(next);
     },
     put: (req, res, next) => {
-        const { comicId, review } = req.params;
+        const comicId = req.params.id;
+        const { review } = req.body;
         const userId = req.user._id;
-        models.Review.findOneAndUpdate({ review, comicId, user: userId })
+        models.Review.updateOne({ user: userId, comicId }, { review: review })
             .then(() => {
                 console.log('Review has been updated!');
             }).catch(next);

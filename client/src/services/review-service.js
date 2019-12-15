@@ -40,15 +40,16 @@ const reviewService = {
         }).then(res => res.json())
             .catch(err => console.error(err));
     },
-    editReview: function (review, id) {
-        return fetch(`http://localhost:8080/api/review/${id}`, {
+    editReview: function (comicId, review) {
+        let data = { review };
+        return fetch(`http://localhost:8080/api/review/${comicId}`, {
             method: 'PUT',
-            body: JSON.stringify(review),
+            body: JSON.stringify(data),
             headers: {
                 'Content-Type': 'application/json'
             },
             credentials: 'include'
-        }).then(res => res.json())
+        }).then(res => res.text())
             .catch(err => console.error(err));
     },
     deleteReview: function (comicId) {
